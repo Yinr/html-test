@@ -2,6 +2,12 @@
 Test place for HTML
 
 ## Clock
+
 <http://test.yinrs.win/clock.html>
 
 > from <http://codepen.io/mohebifar/pen/KwdeMz>
+
+## [Linux.cn](https://linux.cn) Logo
+
+<http://test.yinrs.win/linuxcn-logo.html>
+
