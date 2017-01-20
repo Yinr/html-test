@@ -5,7 +5,6 @@
     <title>test of Linux.cn logo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link href="css/style.css" rel="stylesheet">-->
 </head>
 
 <body>
@@ -21,19 +20,10 @@
             stroke-width: 1;
             stroke: #A6A6A6;
         }
-        /*@keyframes myrotate {
-            from {transform: rotate(0deg);}
-            to {transform: rotate(360deg);}
-        }
-        .point_rotate {
-            animation: myrotate linear 10s infinite;
-            transform-origin: center;
-        }*/
     </style>
-    <!--<iframe src="linuxcn_logo.svg" width="600px" height="600px">
-    </iframe>-->
     <div>
-        <svg version="1.1" id="linuxcn_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <svg version="1.1" id="linuxcn_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" style="enable-background:new 0 0 512 512;"
+            xml:space="preserve">
         <path style="fill:#333333;" d="M500.999,441c0,33.137-26.863,60-60,60H71c-33.137,0-60-26.863-60-60V71c0-33.137,26.863-60,60-60
             h370c33.137,0,60,26.863,60,60V441z"/>
         <g>
@@ -126,26 +116,24 @@
 
         linuxcn_logo = document.getElementById("linuxcn_logo");
         logo_h = linuxcn_logo.getElementById("linuxcn_h");
-        // logo_h_b = linuxcn_logo.getElementById("linuxcn_h_b");
         logo_m = linuxcn_logo.getElementById("linuxcn_m");
-        // logo_m_b = linuxcn_logo.getElementById("linuxcn_m_b");
         logo_point = linuxcn_logo.getElementsByClassName("logo_point");
 
         logo_h_ani = logo_h.getElementsByTagName("animateTransform")[0];
         logo_m_ani = logo_m.getElementsByTagName("animateTransform")[0];
-        
-        var el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        el.setAttribute('cx', '256');
-        el.setAttribute('cy', '256');
-        el.setAttribute('r', '2');
-        el.setAttribute('style', 'fill:#333333;fill-opacity:0.5;');
-        linuxcn_logo.appendChild(el);
+
+        (function() {
+            var el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            el.setAttribute('cx', '256');
+            el.setAttribute('cy', '256');
+            el.setAttribute('r', '2');
+            el.setAttribute('style', 'fill:#333333;fill-opacity:0.5;');
+            linuxcn_logo.appendChild(el);
+        })()
 
         // for(var i = 0; i < logo_point.length; i++) {
         //     logo_point[i].classList.add("point_rotate");
         // }
-
-        // logo_h.style.transform = "rotate(20deg)"
 
         logo_h.setAttribute('x', '254');
         logo_h.setAttribute('y', (256 - pointWidth / 2).toString());
