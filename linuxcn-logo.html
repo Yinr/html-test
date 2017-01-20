@@ -111,10 +111,11 @@
 
         (function() {
             var el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            el.setAttribute('id', 'central_point');
             el.setAttribute('cx', '256');
             el.setAttribute('cy', '256');
             el.setAttribute('r', '2');
-            el.setAttribute('style', 'fill:#333333;fill-opacity:0.5;');
+            el.setAttribute('style', 'fill:#333333;fill-opacity:0.5;transition:1s;');
             linuxcn_logo.appendChild(el);
         })()
 
