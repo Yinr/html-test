@@ -107,14 +107,6 @@
         // width of hour pointer, minute pointer is 2/3
         var pointWidth = 15;
 
-        linuxcn_logo = document.getElementById("linuxcn_logo");
-        logo_h = linuxcn_logo.getElementById("linuxcn_h");
-        logo_m = linuxcn_logo.getElementById("linuxcn_m");
-        logo_point = linuxcn_logo.getElementsByClassName("logo_point");
-
-        logo_h_ani = logo_h.getElementsByTagName("animateTransform")[0];
-        logo_m_ani = logo_m.getElementsByTagName("animateTransform")[0];
-
         (function() {
             var el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             el.setAttribute('id', 'central_point');
@@ -123,7 +115,31 @@
             el.setAttribute('r', '2');
             el.setAttribute('style', 'fill:#333333;fill-opacity:0.5;transition:1s;');
             linuxcn_logo.appendChild(el);
+
+            var el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            el.setAttribute('id', 'second_point');
+            el.setAttribute('cx', '256');
+            el.setAttribute('cy', '20');
+            el.setAttribute('r', '7');
+            var el_a = document.createElementNS('http://www.w3.org/2000/svg', 'animateTransform');
+            el_a.setAttribute('attributeName', 'none');
+            el_a.setAttribute('type', 'rotate');
+            el_a.setAttribute('dur', '60s');
+            el_a.setAttribute('repeatCount', 'indefinite');
+            el.appendChild(el_a);
+            linuxcn_logo.appendChild(el);
         })()
+
+        linuxcn_logo = document.getElementById("linuxcn_logo");
+        logo_h = linuxcn_logo.getElementById("linuxcn_h");
+        logo_m = linuxcn_logo.getElementById("linuxcn_m");
+        logo_point = linuxcn_logo.getElementsByClassName("logo_point");
+
+        logo_h_ani = logo_h.getElementsByTagName("animateTransform")[0];
+        logo_m_ani = logo_m.getElementsByTagName("animateTransform")[0];
+
+        point_s = linuxcn_logo.getElementById("second_point");
+        point_s_ani = point_s.getElementsByTagName("animateTransform")[0];
 
         // for(var i = 0; i < logo_point.length; i++) {
         //     logo_point[i].classList.add("point_rotate");
@@ -141,9 +157,11 @@
         // get current time
         nowh = (new Date()).getHours();
         nowm = (new Date()).getMinutes();
+        nows = (new Date()).getSeconds();
         // set rotate degree
-        rh = (nowh - 3 + nowm / 60) / 12 * 360; // initial state is 90 deg
-        rm = nowm / 60 * 360;
+        rh = (nowh - 3 + nowm / 60 + nows / 60 / 60) / 12 * 360; // initial state is 90 deg
+        rm = (nowm + nows / 60) / 60 * 360;
+        rs = nows / 60 * 360;
 
         logo_h_ani.setAttribute('from', rh.toString() + ' 256 256');
         logo_h_ani.setAttribute('to', (rh + 360).toString() + ' 256 256');
@@ -151,6 +169,10 @@
         logo_m_ani.setAttribute('from', rm.toString() + ' 256 256');
         logo_m_ani.setAttribute('to', (rm + 360).toString() + ' 256 256');
         logo_m_ani.setAttribute('attributeName', 'transform');
+
+        point_s_ani.setAttribute('from', rs.toString() + ' 256 256');
+        point_s_ani.setAttribute('to', (rs + 360).toString() + ' 256 256');
+        point_s_ani.setAttribute('attributeName', 'transform');
     </script>
 
 </body>
