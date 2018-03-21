@@ -3,11 +3,11 @@ Test place for HTML
 
 ## Clock
 
-<http://test.yinrs.win/clock.html>
+<http://test.yinr.cc/clock.html>
 
 > from <http://codepen.io/mohebifar/pen/KwdeMz>
 
 ## [Linux.cn](https://linux.cn) Logo
 
-<http://test.yinrs.win/linuxcn-logo.html>
+<http://test.yinr.cc/linuxcn-logo.html>
 
