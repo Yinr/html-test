@@ -1,0 +1,38 @@
+#linuxcn_logo {
+    width: 512px;
+    height: 512px;
+}
+
+#linuxcn_logo_bigl,
+#linuxcn_logo_bigl_logo {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#linuxcn_logo #linuxcn_logo_bigl_logo {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#linuxcn_logo:hover #linuxcn_logo_bigl_logo {
+    visibility: visible;
+    opacity: 1;
+}
+
+#linuxcn_logo #central_point,
+#linuxcn_logo #linuxcn_logo_bigl {
+    visibility: visible;
+    opacity: 1;
+}
+
+#linuxcn_logo:hover #central_point,
+#linuxcn_logo:hover #linuxcn_logo_bigl {
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width: 512px) {
+    #linuxcn_logo {
+        width: 100%;
+        height: 100%;
+    }
+}
